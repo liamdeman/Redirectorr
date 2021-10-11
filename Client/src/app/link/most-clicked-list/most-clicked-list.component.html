@@ -1,0 +1,19 @@
+<h3>Most clicked links</h3>
+<mat-list *ngIf="links$ | async as links; else loadingOrError">
+  <mat-list-item  *ngFor="let locallink of links$ | async" >
+    <mat-icon mat-list-icon>link</mat-icon>
+    <div mat-line><a href="https://www.{{domain}}/{{locallink.linkExtension}}" data-cy="Link">{{ domain }}/{{locallink.linkExtension}}</a></div>
+    <div mat-line> (click count: {{locallink.clickDates.length}})</div>
+  </mat-list-item>
+</mat-list>
+  
+  <ng-template #loadingOrError>
+    <mat-card class="error" *ngIf="errorMessage; else loading">
+      <p data-cy="errorMessage"> Error loading the Link list: {{ errorMessage }}. <br/>
+        Please try again later.
+    </p>
+    </mat-card>
+  </ng-template> 
+  <ng-template #loading>
+    <mat-spinner></mat-spinner>
+  </ng-template>

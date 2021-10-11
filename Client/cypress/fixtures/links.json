@@ -1,0 +1,32 @@
+[
+    {
+      "linkExtension": "googelcypress",
+      "destination": "https://www.google.com/",
+      "dateCreated": "2021-08-11T00:33:13.6759006",
+      "clickDates": [
+        {
+          "id": 1,
+          "dateClicked": "2021-08-11T00:33:13.6781571"
+        },
+        {
+          "id": 2,
+          "dateClicked": "2021-08-11T00:33:13.6783343"
+        }
+      ]
+    },
+    {
+      "linkExtension": "boomerBook",
+      "destination": "https://www.facebook.com/",
+      "dateCreated": "2021-08-11T00:33:13.6764556",
+      "clickDates": [
+        {
+          "id": 3,
+          "dateClicked": "2021-08-11T00:33:13.6783374"
+        },
+        {
+          "id": 4,
+          "dateClicked": "2021-08-11T00:33:13.6783381"
+        }
+      ]
+    }
+  ]

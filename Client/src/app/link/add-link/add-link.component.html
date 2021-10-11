@@ -1,0 +1,46 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <mat-card>
+    <form [formGroup]="link" (ngSubmit)="onSubmit()">
+      <mat-card-header>
+        <mat-card-title>Create new Link</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content fxLayout="column">
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="link extension"
+            aria-label="Link extension"
+            data-cy="newLinkExtension"
+            formControlName="linkExtension"
+          />
+        </mat-form-field>
+
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="destination"
+            aria-label="destination"
+            data-cy="newDestination"
+            formControlName="destination"
+            pattern="[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"
+          />
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions fxLayout="row" fxLayoutAlign="space-between center">
+
+        <button
+          mat-raised-button
+          type="submit"
+          color="primary"
+          data-cy="CreateLink"
+        >
+          Create
+        </button>
+      </mat-card-actions>
+    </form>
+    <mat-card class="error" *ngIf="errorMessage">
+     {{ errorMessage }}
+    </mat-card>
+  </mat-card>
+</div>

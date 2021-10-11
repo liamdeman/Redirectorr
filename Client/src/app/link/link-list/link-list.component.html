@@ -1,0 +1,22 @@
+<h3>Links created by you</h3>
+
+<div *ngIf="linksFromCurrentUser$ | async as links; else loadingOrError">
+  <div 
+    *ngFor="let locallink of linksFromCurrentUser$ | async" 
+  >
+  
+    <app-link [link]="locallink"></app-link>
+  </div>
+</div>
+
+
+<ng-template #loadingOrError>
+  <mat-card class="error" *ngIf="errorMessage; else loading">
+    <p data-cy="errorMessage"> Error loading the Link list: {{ errorMessage }}. <br/>
+      Please try again later.
+  </p>
+  </mat-card>
+</ng-template> 
+<ng-template #loading>
+  <mat-spinner></mat-spinner>
+</ng-template>

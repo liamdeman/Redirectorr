@@ -1,0 +1,24 @@
+
+<mat-expansion-panel>
+    <mat-expansion-panel-header >
+      <mat-panel-title>
+        <p>{{ domain }}/{{link.linkExtension}}</p>
+      </mat-panel-title>
+      <mat-panel-description>
+        <p><a href="{{link.destination}}">{{link.destination}}</a></p>      
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <button (click)="deleteLink()">
+      <mat-icon>delete_forever</mat-icon>
+    </button>
+    <p>Created on {{link.dateCreated}}</p>
+    <div *ngIf="link.clickDates.length > 0">
+    <h2>Clicked on:</h2>
+    <ul>
+        <li *ngFor="let date of link.clickDates">
+            <app-clickdate [clickDate]="date"></app-clickdate>
+            
+        </li>
+    </ul>
+  </div>
+  </mat-expansion-panel>
